@@ -28,35 +28,14 @@ class RSS(commands.Cog):
                         data = await response.text()
                         feed = feedparser.parse(data)
                         last_entry = feed.entries[0]
-
-                        try:
-                            title = last_entry["title"]
-                        except KeyError:
-                            title = "No title"
-
-                        try:
-                            desc = last_entry["description"]
-                        except KeyError:
-                            desc = "No description"
-                        try:
-                            published = last_entry["published"]
-                        except KeyError:
-                            published = "No published date"
-
-                        try:
-                            category = last_entry["category"]
-                        except KeyError:
-                            category = "No category"
-
-                        try:
-                            author = last_entry["author"]
-                        except KeyError:
-                            author = "No author"
-
-                        try:
-                            link = last_entry["link"]
-                        except KeyError:
-                            link = "No Link"
+                        
+                        title = last_entry.get('title', 'No title')
+                        desc = last_entry.get('description', 'No title')
+                        published = last_entry.get('published', 'No published date')
+                        category = last_entry.get('category', 'No Category')
+                        author = last_entry.get('author', 'No author')
+                        link = last_entry.get('link', 'No link')
+                        
                         try:
                             for content in last_entry["media_content"]:
                                 if "image" in content["type"]:
