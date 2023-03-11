@@ -72,7 +72,7 @@ class RSS(commands.Cog):
 
                         if not result:
                             imagea = discord.Embed(color=discord.Color.embed_background())
-                            imagea.set_image(url="https://cdn.discordapp.com/attachments/1084116453030121574/1084131521096597534/worldnews.png")
+                            imagea.set_image(url="https://cdn.discordapp.com/attachments/1064530429111189564/1084169270700806224/worldnews2.png")
                             embed = discord.Embed(
                                 title=f"{title}",
                                 url=f"{link}",
